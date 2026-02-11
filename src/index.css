@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ofuq CME Platform Design System
+   Medical Education Platform - Arabic RTL
+   Colors: Medical Teal + Warm Gold Accent
+*/
+@layer base {
+  :root {
+    /* Medical Teal Theme */
+    --background: 180 25% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    /* Primary: Deep Medical Teal */
+    --primary: 185 65% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Warm Gold */
+    --secondary: 38 90% 55%;
+    --secondary-foreground: 200 50% 10%;
+
+    --muted: 180 15% 94%;
+    --muted-foreground: 200 25% 40%;
+
+    /* Accent: Light Teal */
+    --accent: 180 45% 92%;
+    --accent-foreground: 185 65% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 20% 88%;
+    --input: 180 20% 88%;
+    --ring: 185 65% 30%;
+
+    --radius: 0.75rem;
+
+    /* Custom Ofuq Colors */
+    --ofuq-teal: 185 65% 30%;
+    --ofuq-teal-light: 180 45% 92%;
+    --ofuq-gold: 38 90% 55%;
+    --ofuq-gold-light: 40 95% 95%;
+    --ofuq-navy: 200 50% 15%;
+    --ofuq-cream: 40 50% 97%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(185 65% 30%), hsl(190 55% 40%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 90% 55%), hsl(45 95% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(180 25% 98%) 0%, hsl(185 30% 95%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(185 65% 30% / 0.15);
+    --shadow-glow: 0 0 40px hsl(185 65% 30% / 0.2);
+    --shadow-gold: 0 4px 20px -4px hsl(38 90% 55% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 185 65% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 45% 95%;
+    --sidebar-accent-foreground: 185 65% 25%;
+    --sidebar-border: 180 20% 88%;
+    --sidebar-ring: 185 65% 40%;
+  }
+
+  .dark {
+    --background: 200 50% 8%;
+    --foreground: 180 20% 95%;
+
+    --card: 200 45% 12%;
+    --card-foreground: 180 20% 95%;
+
+    --popover: 200 45% 12%;
+    --popover-foreground: 180 20% 95%;
+
+    --primary: 180 55% 45%;
+    --primary-foreground: 200 50% 8%;
+
+    --secondary: 38 85% 50%;
+    --secondary-foreground: 200 50% 8%;
+
+    --muted: 200 40% 18%;
+    --muted-foreground: 180 15% 60%;
+
+    --accent: 200 40% 20%;
+    --accent-foreground: 180 55% 50%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 35% 22%;
+    --input: 200 35% 22%;
+    --ring: 180 55% 45%;
+
+    --ofuq-teal: 180 55% 45%;
+    --ofuq-teal-light: 200 40% 20%;
+    --ofuq-gold: 38 85% 50%;
+    --ofuq-gold-light: 38 40% 15%;
+    --ofuq-navy: 200 50% 8%;
+    --ofuq-cream: 200 45% 12%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(180 55% 45%), hsl(185 50% 35%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 85% 50%), hsl(42 90% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(200 50% 8%) 0%, hsl(200 45% 12%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(180 55% 45% / 0.2);
+    --shadow-glow: 0 0 40px hsl(180 55% 45% / 0.15);
+    --shadow-gold: 0 4px 20px -4px hsl(38 85% 50% / 0.25);
+
+    --sidebar-background: 200 45% 10%;
+    --sidebar-foreground: 180 20% 95%;
+    --sidebar-primary: 180 55% 45%;
+    --sidebar-primary-foreground: 200 50% 8%;
+    --sidebar-accent: 200 40% 18%;
+    --sidebar-accent-foreground: 180 55% 50%;
+    --sidebar-border: 200 35% 22%;
+    --sidebar-ring: 180 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+.text-gradient {
+  background: var(--gradient-primary);
+  color: white;                /* النص يظهر بلون أبيض – يمكن تغييره */
+  display: inline-block;       /* لكي يأخذ الـ padding حقّه */
+  padding: 0.1em 0.4em;        /* مسافة حول النص */
+  border-radius: 6px;          /* زوايا دائرية خفيفة */
+  font-weight: bold;           /* (اختياري) */
+}
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
