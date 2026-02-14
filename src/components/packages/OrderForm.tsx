@@ -26,6 +26,7 @@ interface OrderFormProps {
   customPricePerHour?: number;
 }
 
+// ✅ جعل جميع الحقول إجبارية
 const formSchema = z.object({
   name: z
     .string()
@@ -43,7 +44,11 @@ const formSchema = z.object({
     .trim()
     .min(2, "التخصص مطلوب")
     .max(100, "التخصص طويل جداً"),
-  licenseNumber: z.string().trim().max(50, "رقم الهيئة طويل جداً").optional(),
+  licenseNumber: z
+    .string()
+    .trim()
+    .min(1, "رقم الهيئة مطلوب") // ✅ إجباري الآن
+    .max(50, "رقم الهيئة طويل جداً"),
 });
 
 const OrderForm = ({
@@ -72,7 +77,7 @@ const OrderForm = ({
       name,
       phone,
       specialty,
-      licenseNumber: licenseNumber || undefined,
+      licenseNumber, // ✅ إرساله كما هو (مطلوب)
     });
 
     if (!result.success) {
@@ -91,7 +96,7 @@ const OrderForm = ({
       name,
       phone,
       specialty,
-      licenseNumber: licenseNumber || undefined,
+      licenseNumber, // ✅ مطلوب الآن
     };
 
     // ✅ إرسال الطلب مع بيانات العميل الكاملة
@@ -173,6 +178,7 @@ const OrderForm = ({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="د. أحمد علي"
+              required
             />
             {errors.name && (
               <p className="text-xs text-destructive">{errors.name}</p>
@@ -190,6 +196,7 @@ const OrderForm = ({
               placeholder="05xxxxxxxx"
               dir="ltr"
               className="text-left"
+              required
             />
             {errors.phone && (
               <p className="text-xs text-destructive">{errors.phone}</p>
@@ -205,6 +212,7 @@ const OrderForm = ({
               value={specialty}
               onChange={(e) => setSpecialty(e.target.value)}
               placeholder="طب الأسرة"
+              required
             />
             {errors.specialty && (
               <p className="text-xs text-destructive">{errors.specialty}</p>
@@ -214,7 +222,7 @@ const OrderForm = ({
           <div className="space-y-2">
             <Label className="flex items-center gap-2">
               <Hash className="h-4 w-4 text-muted-foreground" />
-              رقم الهيئة (اختياري)
+              رقم الهيئة *
             </Label>
             <Input
               value={licenseNumber}
@@ -222,7 +230,11 @@ const OrderForm = ({
               placeholder="رقم التسجيل في الهيئة"
               dir="ltr"
               className="text-left"
+              required
             />
+            {errors.licenseNumber && (
+              <p className="text-xs text-destructive">{errors.licenseNumber}</p>
+            )}
           </div>
 
           <Button type="submit" className="w-full" size="lg">

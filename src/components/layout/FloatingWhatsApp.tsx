@@ -18,7 +18,7 @@ const FloatingWhatsApp = () => {
     e.preventDefault();
     openWhatsAppChat(
       whatsappNumber,
-      "مرحباً، أود الاستفسار عن خدمات منصة أُفُق"
+      "السلام عليكم، أود الاستفسار عن خدمات منصة أُفُق"
     );
   };
 
