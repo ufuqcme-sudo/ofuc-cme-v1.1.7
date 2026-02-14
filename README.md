@@ -1,73 +1,98 @@
-# Welcome to your Lovable project
+🚀 منصة أُفُق | Ofuq Platform
 
-## Project info
+[زيارة المنصة](https://ofuc-cme.vercel.app/)
+[الحالة: Production](https://ofuc-cme.vercel.app/)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+🌟 مقدمة
 
-There are several ways of editing your application.
+أُفُق هي منصة SaaS متكاملة لإدارة الخدمات والتدريب الصحي، مصممة للشركات والمؤسسات لتسهيل العمليات اليومية، متابعة الأداء، وإدارة المستخدمين بكفاءة.
+تم تصميم المنصة لتكون سهلة الاستخدام، مرنة، وقابلة للتوسع حسب احتياجات المؤسسة.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+🖼️ لمحة بصرية للمنصة
 
-Changes made via Lovable will be committed automatically to this repo.
+واجهة المستخدم الرئيسية:
 
-**Use your preferred IDE**
+![واجهة المستخدم الرئيسية](./screenshots/home.png)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+لوحة تحكم المسؤول (Admin Dashboard):
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+![لوحة تحكم المسؤول](./screenshots/admin-dashboard.png)
 
-Follow these steps:
+إدارة المستخدمين والبيانات:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+![إدارة المستخدمين](./screenshots/user-management.png)
+
+---
+
+🛠️ التقنيات المستخدمة
+
+الطبقة | التقنية
+Frontend | React + TypeScript + Vite
+UI/UX | shadcn-ui + Tailwind CSS
+Backend / Database | Supabase
+Deployment | Vercel
+
+---
+
+⚡ المميزات الرئيسية
+
+* إدارة متقدمة للمستخدمين: التحكم في الصلاحيات والأدوار بسهولة
+* لوحة تحكم Admin Dashboard: واجهة احترافية لتتبع الأداء وإدارة العمليات
+* تكامل كامل مع Supabase: لتخزين البيانات بطريقة آمنة وفعّالة
+* دعم RTL للغة العربية: واجهة مناسبة للمستخدمين العرب
+* نشر سريع على Vercel: كل التحديثات تنعكس تلقائياً على النسخة الحية
+
+---
+
+📂 هيكل المشروع
+
+ofuq-admin-hub-main/
+
+* public/                  - ملفات ثابتة
+* src/                     - ملفات الواجهة الأمامية
+* supabase/                - سكريبتات وقاعدة البيانات
+* .gitignore               - استبعاد ملفات من Git
+* package.json             - إدارة الاعتماديات
+* tsconfig.json            - إعدادات TypeScript
+* vite.config.ts           - إعدادات Vite
+* README.md                - هذا الملف
+
+---
+
+🚀 تشغيل المشروع محلياً
+
+تأكد من تثبيت Node.js و npm، ثم نفذ الخطوات التالية:
+
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd ofuq-admin-hub-main
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🔧 النشر على Vercel
 
-**Use GitHub Codespaces**
+1. اربط المستودع بـ Vercel
+2. كل push على GitHub سيقوم بتحديث النسخة الحية تلقائياً
+3. يمكنك إدارة النطاقات والإصدارات من لوحة تحكم Vercel بسهولة
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+👨‍💻 المطور
 
-This project is built with:
+محمود | مطور المنصة ومالك المشروع
+البريد الإلكتروني: [example@ofuq.com](mailto:example@ofuq.com)
+GitHub: [ufuqcme-sudo](https://github.com/ufuqcme-sudo)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+تحب أجهزها لك كده؟
